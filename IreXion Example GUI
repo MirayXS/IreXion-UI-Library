@@ -45,6 +45,6 @@ local Dropdown = Category:AddDropdown("Dropdown", {
 	print(name)
 end)
 
-local Bind = Category:AddBind("Bind", Enum.KeyCode.LeftShift, function()
+local Bind = Category:AddBind("Bind", Enum.KeyCode.RightShift, function()
 	print("Bind Pressed")
 end)
