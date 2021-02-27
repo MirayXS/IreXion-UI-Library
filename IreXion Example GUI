@@ -6,7 +6,7 @@ local Gui = Library:AddGui({
 	ToggleKey = Enum.KeyCode.RightShift,
 })
 
-local Tab = Gui:AddTab("Test Tab")
+local Tab = Gui:AddTab("Tab")
 
 local Category = Tab:AddCategory("Category")
 
