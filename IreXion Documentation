@@ -8,47 +8,47 @@ Library:AddGui(properties)
 		<Enum.KeyCode> ToggleKey
 	}
 
-	return -> <table> Gui
+	return -> <table> Gui { <ScreenGui> Gui, <Enum.KeyCode> ToggleKey }
 
-Gui:Toggle(bool)
-	<bool> bool
+Gui:Toggle(boolean)
+	<boolean> boolean
 
 Gui:AddTab(name)
 	<string> name
 
-	return -> <table> Tab
+	return -> <table> Tab { <Frame> Tab, <table> Toggles }
 
 Tab:AddCategory(name)
 	<string> name
 
-	return -> <table> Category
+	return -> <table> Category { <Frame> Frame, <TextLabel> Title }
 
 Category:AddButton(name, func)
 	<string> name
 	<function> func
 
-	return -> <table> Button
+	return -> <table> Button { <TextButton> Button, <function> Function }
 
 Category:AddToggle(name, default, func)
 	<string> name
-	<bool> default
+	<boolean> default
 	<function> func
 
-	return -> <table> Toggle
+	return -> <table> Toggle { <boolean> Toggle, <function> Function }
 
-Toggle:Set(bool)
-	<bool> bool
+Toggle:Set(boolean)
+	<boolean> boolean
 
 Category:AddBox(name, func)
 	<string> name
 	<function> func
 
-	return -> <table> Box
+	return -> <table> Box { <TextBox> Box, <function> Function }
 
 Category:AddLabel(name)
 	<string> name
 
-	return -> <table> Label
+	return -> <table> Label { <TextLabel> Label }
 
 Category:AddDualLabel(properties)
 	<table> properties -> {
@@ -56,7 +56,7 @@ Category:AddDualLabel(properties)
 		<string> Text2
 	}
 
-	return -> <table> DualLabel
+	return -> <table> DualLabel { <TextLabel> Label1, <TextLabel> Label2 }
 
 Category:AddSlider(name, min, max, default, func)
 	<string> name
@@ -65,22 +65,22 @@ Category:AddSlider(name, min, max, default, func)
 	<int> default
 	<function> function
 
-	return -> <table> Slider
+	return -> <table> Slider { <int> Value, <function> Function }
 
 Slider:Set(int)
 	<int> int
 
 Category:AddDropdown(name, items, func)
 	<string> name
-	<table<string>> items -> table of items
+	<table<string>> items
 	<function> func
 
-	return -> <table> Dropdown
+	return -> <table> Dropdown { <table> Items, <function> Function }
 
 Dropdown:AddItem(name)
 	<string> name
 	
-	return -> <instance> TextButton
+	return -> <TextButton>
 
 Dropdown:RemoveItem(name)
 	<string> name
@@ -90,7 +90,7 @@ Category:AddBind(name, bind, func)
 	<Enum.KeyCode> bind
 	<function> func
 
-	return -> <table> Bind
+	return -> <table> Bind { <Enum.KeyCode> Bind, <function> Function }
 
 Bind:Set(bind)
 	<Enum.KeyCode> bind
