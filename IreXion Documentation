@@ -18,6 +18,12 @@ Gui:AddTab(name)
 
 	return -> <table> Tab { <Frame> Tab, <table> Toggles }
 
+Tab:Show()
+	-> Shows the tab
+
+Tab:Hide()
+	-> Hides the tab
+
 Tab:AddCategory(name)
 	<string> name
 
