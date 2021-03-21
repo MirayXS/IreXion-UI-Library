@@ -1,104 +1,157 @@
-Library:AddGui(properties)
-	<table> properties -> {
-		<table> Title -> {
-			<string> Title1,
-			<string> Title2
-		}
-		<Color3> ThemeColor
-		<Enum.KeyCode> ToggleKey
-	}
+Library:AddGui(<table> Properties {
+	<table> Title {
+		<string> Title1,
+		<string> Title2
+	},
+	<Color3> ThemeColor,
+	<Enum.KeyCode> ToggleKey
+})
 
-	return -> <table> Gui { <ScreenGui> Gui, <Enum.KeyCode> ToggleKey }
+return <table> Gui {
+	<ScreenGui> Gui,
+	<Enum.KeyCode> ToggleKey
+}
 
-Gui:Toggle(boolean)
-	<boolean> boolean
+-----------------------------------------------------------------------------------------------------------------------------
 
-Gui:AddTab(name)
-	<string> name
+Library:Notify(<string> desc, <function> func(<boolean> yesno))
 
-	return -> <table> Tab { <Frame> Tab, <table> Toggles }
+return nil
+
+[i] After 10 seconds without interaction, 'No' will automatically be selected
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Gui:Toggle(<boolean> visible)
+
+return nil
+
+[i] This is the same function called by pressing the ToggleKey
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Gui:AddTab(<string> name)
+
+return <table> Tab {
+	<Frame> Tab,
+	<table> Toggles
+}
+
+-----------------------------------------------------------------------------------------------------------------------------
 
 Tab:Show()
-	-> Shows the tab
+
+-----------------------------------------------------------------------------------------------------------------------------
 
 Tab:Hide()
-	-> Hides the tab
 
-Tab:AddCategory(name)
-	<string> name
+-----------------------------------------------------------------------------------------------------------------------------
 
-	return -> <table> Category { <Frame> Frame, <TextLabel> Title }
+Tab:AddCategory(<string> name)
 
-Category:AddButton(name, func)
-	<string> name
-	<function> func
+return <table> Category {
+	<Frame> Frame,
+	<TextLabel> Title
+}
 
-	return -> <table> Button { <TextButton> Button, <function> Function }
+-----------------------------------------------------------------------------------------------------------------------------
 
-Category:AddToggle(name, default, func)
-	<string> name
-	<boolean> default
-	<function> func
+Category:AddButton(<string> name, <function> func())
 
-	return -> <table> Toggle { <boolean> Toggle, <function> Function }
+return <table> Button {
+	<TextButton> Button,
+	<function> Function
+}
 
-Toggle:Set(boolean)
-	<boolean> boolean
+-----------------------------------------------------------------------------------------------------------------------------
 
-Category:AddBox(name, func)
-	<string> name
-	<function> func
+Category:AddToggle(<string> name, <boolean> default, <function> func(<boolean> enabled))
 
-	return -> <table> Box { <TextBox> Box, <function> Function }
+return <table> Toggle {
+	<boolean> Toggle,
+	<function> Function
+}
 
-Category:AddLabel(name)
-	<string> name
+-----------------------------------------------------------------------------------------------------------------------------
 
-	return -> <table> Label { <TextLabel> Label }
+Toggle:Set(<boolean> enabled)
 
-Category:AddDualLabel(properties)
-	<table> properties -> {
-		<string> Text1,
-		<string> Text2
-	}
-
-	return -> <table> DualLabel { <TextLabel> Label1, <TextLabel> Label2 }
-
-Category:AddSlider(name, min, max, default, func)
-	<string> name
-	<int> min
-	<int> max
-	<int> default
-	<function> function
-
-	return -> <table> Slider { <int> Value, <function> Function }
-
-Slider:Set(int)
-	<int> int
-
-Category:AddDropdown(name, items, func)
-	<string> name
-	<table<string>> items
-	<function> func
-
-	return -> <table> Dropdown { <table> Items, <function> Function }
-
-Dropdown:AddItem(name)
-	<string> name
+return nil
 	
-	return -> <TextButton>
+-----------------------------------------------------------------------------------------------------------------------------
 
-Dropdown:RemoveItem(name)
-	<string> name
+Category:AddBox(<string> name, <function> func(<string> input))
 
-Category:AddBind(name, bind, func)
-	<string> name
-	<Enum.KeyCode> bind
-	<function> func
+return <table> Box {
+	<TextBox> Box,
+	<function> Function
+}
 
-	return -> <table> Bind { <Enum.KeyCode> Bind, <function> Function }
+-----------------------------------------------------------------------------------------------------------------------------
 
-Bind:Set(bind)
-	<Enum.KeyCode> bind
+Category:AddLabel(<string> name)
 
-return -> <table> Library
+return <table> Label {
+	<TextLabel> Label
+}
+	
+-----------------------------------------------------------------------------------------------------------------------------
+
+Category:AddDualLabel(<table> Properties {
+	<string> Text1,
+	<string> Text2
+})
+
+return <table> DualLabel {
+	<TextLabel> Label1,
+	<TextLabel> Label2
+}
+	
+-----------------------------------------------------------------------------------------------------------------------------
+
+Category:AddSlider(<string> name, <number> min, <number> max, <number> default, <function> func(<number> value))
+
+return <table> Slider {
+	<number> Value,
+	<function> Function
+}
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Slider:Set(<integer> int)
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Category:AddDropdown(<string> name, <table<string>> items, <function> func(<string> item))
+
+return <table> Dropdown {
+	<table> Items,
+	<function> Function
+}
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Dropdown:AddItem(<string> name)
+	
+return <TextButton>
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Dropdown:RemoveItem(<string> name)
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Category:AddBind(<string> name, <Enum.KeyCode> bind, <function> func())
+
+return <table> Bind {
+	<Enum.KeyCode> Bind,
+	<function> Function
+}
+	
+-----------------------------------------------------------------------------------------------------------------------------
+
+Bind:Set(<Enum.KeyCode> bind)
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+return <table> Library
