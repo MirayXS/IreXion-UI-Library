@@ -1,12 +1,10 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/IreXion-UI-Library/main/IreXion%20UI%20Library"))()
-
 local Gui = Library:AddGui({
 	Title = {"IreXion", "UI Library"},
 	ThemeColor = Color3.fromRGB(0, 255, 0),
 	ToggleKey = Enum.KeyCode.RightShift,
 })
 
-local Tab = Gui:AddTab("Tab")
+local Tab = Gui:AddTab("Test Tab")
 
 local Category = Tab:AddCategory("Category")
 
@@ -45,6 +43,10 @@ local Dropdown = Category:AddDropdown("Dropdown", {
 	print(name)
 end)
 
-local Bind = Category:AddBind("Bind", Enum.KeyCode.RightShift, function()
-	print("Bind Pressed")
+local Bind = Category:AddBind("Bind", Gui.ToggleKey, function()
+	print("Toggled GUI")
+end)
+
+Library:Notify("Thank you for checking out IreXion UI Library.", function(bool)
+	print("User clicked", bool and "yes" or "no")
 end)
