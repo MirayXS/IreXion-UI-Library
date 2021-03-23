@@ -26,7 +26,7 @@ Gui:Toggle(<boolean> visible)
 
 return nil
 
-[i] This is the same function called by pressing the ToggleKey
+[i] This is the same function called by pressing the toggle key
 
 -----------------------------------------------------------------------------------------------------------------------------
 
@@ -41,9 +41,13 @@ return <table> Tab {
 
 Tab:Show()
 
+[i] Shows the desired Tab, and hides all other tabs
+
 -----------------------------------------------------------------------------------------------------------------------------
 
 Tab:Hide()
+
+[i] Hides the desired Tab
 
 -----------------------------------------------------------------------------------------------------------------------------
 
@@ -77,6 +81,8 @@ return <table> Toggle {
 Toggle:Set(<boolean> enabled)
 
 return nil
+
+[i] Set the Toggle's value
 	
 -----------------------------------------------------------------------------------------------------------------------------
 
@@ -120,6 +126,20 @@ return <table> Slider {
 
 Slider:Set(<integer> int)
 
+[i] Set the Slider's current value
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Slider:SetMin(<integer> int)
+
+[i] Set the minimum value for Slider
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Slider:SetMax(<integer> int)
+
+[i] Set the maximum value for Slider
+
 -----------------------------------------------------------------------------------------------------------------------------
 
 Category:AddDropdown(<string> name, <table<string>> items, <function> func(<string> item))
@@ -151,6 +171,8 @@ return <table> Bind {
 -----------------------------------------------------------------------------------------------------------------------------
 
 Bind:Set(<Enum.KeyCode> bind)
+
+[i] Set the keybind for Bind
 
 -----------------------------------------------------------------------------------------------------------------------------
 
