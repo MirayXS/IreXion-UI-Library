@@ -7,15 +7,14 @@
     |_____|_|  \___/_/ \_\_|\___/|_| |_|  \____/|_____| |______|_|_.__/|_|  \__,_|_|   \__, |
                                                                                         __/ |
                                                                                        |___/
-    IreXion UI Library v1.0.3
+    IreXion UI Library v1.0.2
     
     UI Design - Vynixu
     Scripting - Vynixu
     
     [ What's New? ]
     
-    [+] Added slider:SetMin(<integer>)
-    [+] Added slider:SetMax(<integer>)
+    x
     
 ]]--
 
