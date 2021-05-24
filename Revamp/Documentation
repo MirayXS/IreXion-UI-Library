@@ -199,6 +199,12 @@ return nil
 
 ----------
 
+<function> ToggleSlider:Toggle(<boolean> enabled)
+
+return nil
+
+----------
+
 <function> ToggleSlider:AddToolTip(<string> description)
 
 return nil
