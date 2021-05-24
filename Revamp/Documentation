@@ -289,5 +289,3 @@ return nil
 <function> ToggleBind:AddToolTip(<string> description)
 
 return nil
-
---------------------------------------------------
