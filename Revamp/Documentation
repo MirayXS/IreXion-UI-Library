@@ -25,6 +25,17 @@ return <table> Gui {
 
 <function> Library:Notify(<string> description, <function> function(<boolean> yesno))
 
+return <table> Notification {
+    <ScreenGui> Gui,
+    <Frame> Holder,
+    <string> Description,
+    <function> Function,
+}
+
+----------
+
+<function> Notification:Select(<boolean> yesno)
+
 return nil
 
 --------------------------------------------------
