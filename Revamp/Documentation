@@ -1,5 +1,6 @@
 <table> Library {
-    <int> MaxNotificationStacking
+    <int> MaxNotificationStacking,
+    <int> NotificationMaxLineCount
 }
 
 ----------
